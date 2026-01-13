@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGNYTE - AI Automation Agency | n8n Automation </title>
+    <title>IGNYTE - Sovereign System Architecture | Agentic Governance</title>
     <style>
         * {
             margin: 0;
@@ -38,15 +38,22 @@
 
         .page {
             display: none;
+            animation: fadeIn 0.4s ease-in;
         }
 
         .page.active {
             display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Header & Navigation */
         header {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
@@ -201,6 +208,20 @@
             padding: 96px 0 80px;
             background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at top, rgba(105, 65, 198, 0.05), transparent 60%);
+            pointer-events: none;
         }
 
         .hero-eyebrow {
@@ -213,6 +234,7 @@
             font-weight: 600;
             margin-bottom: 20px;
             letter-spacing: -0.01em;
+            position: relative;
         }
 
         .hero h1 {
@@ -224,6 +246,7 @@
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
         }
 
         .hero h1 .gradient-text {
@@ -236,9 +259,7 @@
         }
 
         @keyframes shimmer {
-            to {
-                background-position: 200% center;
-            }
+            to { background-position: 200% center; }
         }
 
         .hero-subtitle {
@@ -248,6 +269,7 @@
             margin: 0 auto 40px;
             line-height: 1.6;
             font-weight: 400;
+            position: relative;
         }
 
         .hero-cta {
@@ -255,6 +277,7 @@
             gap: 12px;
             justify-content: center;
             margin-bottom: 64px;
+            position: relative;
         }
 
         .btn-hero-primary {
@@ -300,6 +323,19 @@
             background: var(--dark-bg);
             color: white;
             padding: 72px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(105, 65, 198, 0.1), transparent);
+            pointer-events: none;
         }
 
         .stats-grid {
@@ -307,6 +343,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 64px;
             text-align: center;
+            position: relative;
         }
 
         .stat-number {
@@ -464,6 +501,7 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .case-study-card:hover {
@@ -496,6 +534,7 @@
             letter-spacing: 0.08em;
             margin-bottom: 12px;
             opacity: 0.9;
+            position: relative;
         }
 
         .case-study-title {
@@ -503,11 +542,13 @@
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -0.01em;
+            position: relative;
         }
 
         .case-study-company {
             font-size: 16px;
             opacity: 0.9;
+            position: relative;
         }
 
         .case-study-content {
@@ -567,7 +608,7 @@
             font-weight: 600;
         }
 
-        /* Prompts Page */
+        /* Prompts/Toolkit Page */
         .prompts-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -765,6 +806,7 @@
             font-size: 18px;
             color: var(--text-secondary);
             margin-bottom: 40px;
+            line-height: 1.6;
         }
 
         /* Blog Styles */
@@ -781,6 +823,7 @@
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .blog-card:hover {
@@ -834,6 +877,217 @@
 
         .read-more:hover {
             text-decoration: underline;
+        }
+
+        /* About Page Styles */
+        .about-hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy-item {
+            margin-bottom: 48px;
+        }
+
+        .philosophy-item h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .philosophy-item p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 32px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            box-shadow: 0 8px 24px rgba(16, 24, 40, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .team-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            color: var(--primary-purple);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Industries Page */
+        .industry-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 32px;
+            transition: all 0.3s;
+        }
+
+        .industry-card:hover {
+            box-shadow: 0 12px 32px rgba(16, 24, 40, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .industry-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .industry-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+        }
+
+        .industry-info h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .industry-tagline {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .industry-challenges {
+            margin-bottom: 32px;
+        }
+
+        .industry-challenges h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .challenges-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .challenge-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            padding: 16px;
+            background: #F9FAFB;
+            border-radius: 8px;
+        }
+
+        .challenge-item::before {
+            content: '✓';
+            color: var(--primary-purple);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .industry-solutions h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .solutions-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .solution-card-small {
+            padding: 20px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .solution-card-small h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .solution-card-small p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         /* Footer */
@@ -903,6 +1157,84 @@
             color: var(--text-tertiary);
         }
 
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1), transparent);
+        }
+
+        .cta-banner h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cta-banner p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .btn-cta-white {
+            background: white;
+            color: var(--primary-purple);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-cta-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-cta-outline {
+            background: transparent;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-cta-outline:hover {
+            background: white;
+            color: var(--primary-purple);
+        }
+
         @media (max-width: 1024px) {
             .nav-menu {
                 display: none;
@@ -916,11 +1248,17 @@
             .features-grid,
             .case-study-grid,
             .prompts-grid,
-            .blog-grid {
+            .blog-grid,
+            .team-grid,
+            .solutions-list {
                 grid-template-columns: 1fr;
             }
 
             .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .challenges-list {
                 grid-template-columns: 1fr;
             }
         }
@@ -928,1013 +1266,3 @@
         html {
             scroll-behavior: smooth;
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo" onclick="navigateTo('home')">IGNYTE</div>
-                
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <span class="nav-link" onclick="navigateTo('prompts')">Free Prompts</span>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link has-dropdown">Solutions</span>
-                        <div class="dropdown">
-                            <span class="dropdown-item" onclick="navigateTo('solutions')">All Solutions</span>
-                            <span class="dropdown-item" onclick="navigateTo('solutions')">Lead Automation</span>
-                            <span class="dropdown-item" onclick="navigateTo('solutions')">Customer Service AI</span>
-                            <span class="dropdown-item" onclick="navigateTo('solutions')">Operations Automation</span>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link has-dropdown">Industries</span>
-                        <div class="dropdown">
-                            <span class="dropdown-item" onclick="navigateTo('industries')">All Industries</span>
-                            <span class="dropdown-item" onclick="navigateTo('industries')">Automotive</span>
-                            <span class="dropdown-item" onclick="navigateTo('industries')">Professional Services</span>
-                            <span class="dropdown-item" onclick="navigateTo('industries')">Retail & E-commerce</span>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link" onclick="navigateTo('about')">About</span>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link" onclick="navigateTo('blog')">Blog</span>
-                    </li>
-                </ul>
-
-                <div class="nav-actions">
-                    <button class="btn-secondary" onclick="navigateTo('audit')">Contact</button>
-                    <button class="btn-primary" onclick="navigateTo('audit')">Get Free Audit</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Home Page -->
-    <div id="home" class="page active">
-        <section class="hero">
-            <div class="container">
-                <span class="hero-eyebrow">n8n AI Automation Specialists</span>
-                <h1>The <span class="gradient-text">#1 AI Automation Agency</span> for Growing Businesses</h1>
-                <p class="hero-subtitle">We help SMBs eliminate busywork, accelerate growth, and unlock efficiency. Save thousands of hours while scaling revenue, operation after operation.</p>
-                <div class="hero-cta">
-                    <button class="btn-hero-primary" onclick="navigateTo('audit')">Get Your Free Audit</button>
-                    <button class="btn-hero-secondary" onclick="navigateTo('prompts')">Free Prompts</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="stats-banner">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat">
-                        <div class="stat-number">6,700+</div>
-                        <div class="stat-label">hours saved monthly</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">87%</div>
-                        <div class="stat-label">reduction in manual tasks</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">10X</div>
-                        <div class="stat-label">ROI in 6 months</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">businesses transformed</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">What We Deliver</div>
-                    <h2 class="section-title">Enterprise-grade automation for ambitious businesses</h2>
-                    <p class="section-subtitle">Drive efficiency, predictability, and growth with AI-powered automation built on n8n.</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">AI-Powered Workflows</h3>
-                        <p class="feature-description">Intelligent automation that learns and adapts to your business processes, powered by cutting-edge AI agents and LLMs.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Rapid Deployment</h3>
-                        <p class="feature-description">From discovery to deployment in weeks, not months. Get your automation running quickly with proven frameworks.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Universal Integration</h3>
-                        <p class="feature-description">Connect every tool in your tech stack—CRMs, databases, communication platforms, and 400+ applications.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Data-Driven Insights</h3>
-                        <p class="feature-description">Real-time analytics and reporting that turn your operational data into actionable business intelligence.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Custom Solutions</h3>
-                        <p class="feature-description">Tailored automation strategies designed specifically for your industry, whether automotive, services, or retail.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Enterprise Security</h3>
-                        <p class="feature-description">Bank-level encryption, GDPR compliance, and robust data protection for peace of mind at scale.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-dark">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">Success Stories</div>
-                    <h2 class="section-title">Proven results across industries</h2>
-                    <p class="section-subtitle">Real businesses, real results. See how we've transformed SMB operations with n8n automation.</p>
-                </div>
-                <div class="case-study-grid">
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Automotive Dealership</div>
-                            <h3 class="case-study-title">Lead-to-Sale Pipeline Automation</h3>
-                            <p class="case-study-company">Premier Motors UK</p>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">312%</div>
-                                    <div class="metric-label">Lead Response</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">45%</div>
-                                    <div class="metric-label">Cost Reduction</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">24/7</div>
-                                    <div class="metric-label">Availability</div>
-                                </div>
-                            </div>
-                            <p class="case-study-description">Automated lead capture, scoring, and nurturing system that connects AutoTrader, Motors.co.uk, and website forms to CRM with intelligent AI qualification and instant follow-up.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Lead Automation</span>
-                                <span class="solution-tag">CRM Integration</span>
-                                <span class="solution-tag">AI Scoring</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Professional Services</div>
-                            <h3 class="case-study-title">Client Onboarding & Document Automation</h3>
-                            <p class="case-study-company">Elite Legal Partners</p>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">78%</div>
-                                    <div class="metric-label">Time Saved</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">99%</div>
-                                    <div class="metric-label">Accuracy</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">£47K</div>
-                                    <div class="metric-label">Annual Savings</div>
-                                </div>
-                            </div>
-                            <p class="case-study-description">Streamlined client intake with automated document generation, e-signature workflows, and intelligent data extraction that reduced onboarding from 5 days to 4 hours.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Document Automation</span>
-                                <span class="solution-tag">E-Signature</span>
-                                <span class="solution-tag">Data Extraction</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">E-commerce Retail</div>
-                            <h3 class="case-study-title">Inventory & Customer Service AI</h3>
-                            <p class="case-study-company">StyleHub Fashion</p>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">91%</div>
-                                    <div class="metric-label">Query Resolution</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">2.3X</div>
-                                    <div class="metric-label">Customer Satisfaction</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">£89K</div>
-                                    <div class="metric-label">Revenue Uplift</div>
-                                </div>
-                            </div>
-                            <p class="case-study-description">AI chatbot handling 91% of customer inquiries with automated inventory sync across 3 platforms, dynamic pricing, and personalized recommendation engine.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">AI Chatbot</span>
-                                <span class="solution-tag">Inventory Sync</span>
-                                <span class="solution-tag">Recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Service Business</div>
-                            <h3 class="case-study-title">Scheduling & Operations Platform</h3>
-                            <p class="case-study-company">ProClean Services</p>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">156</div>
-                                    <div class="metric-label">Hours/Month</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">64%</div>
-                                    <div class="metric-label">Booking Increase</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">4.8★</div>
-                                    <div class="metric-label">Customer Rating</div>
-                                </div>
-                            </div>
-                            <p class="case-study-description">Smart scheduling system with automated booking confirmations, route optimization, staff coordination, and automated review requests that boosted repeat business by 64%.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Smart Scheduling</span>
-                                <span class="solution-tag">Route Optimization</span>
-                                <span class="solution-tag">Review Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Free Prompts Page -->
-    <div id="prompts" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">Free Resources</div>
-                    <h2 class="section-title">20 Business AI Prompts That Drive Results</h2>
-                    <p class="section-subtitle">Copy, customize, and deploy these proven prompts to unlock AI productivity in your business operations.</p>
-                </div>
-                
-                <div class="prompts-grid">
-                    <div class="prompt-card">
-                        <span class="prompt-category">Sales</span>
-                        <h3 class="prompt-title">Lead Qualification Assistant</h3>
-                        <p class="prompt-description">Automatically score and qualify inbound leads based on your ideal customer profile.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Analyze this lead: [LEAD DATA]. Score from 1-10 based on: budget (£X+), decision timeline (90 days), authority level, need urgency. Provide qualification score, key insights, and recommended next action.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Marketing</span>
-                        <h3 class="prompt-title">SEO Content Optimizer</h3>
-                        <p class="prompt-description">Transform existing content into SEO-optimized articles that rank.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Optimize this content for keyword "[KEYWORD]". Include: H2/H3 structure, meta description (155 chars), 5 LSI keywords, internal linking suggestions, and FAQ schema markup.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Operations</span>
-                        <h3 class="prompt-title">Process Documentation Generator</h3>
-                        <p class="prompt-description">Create detailed SOPs from brief process descriptions.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Create a step-by-step SOP for: [PROCESS]. Include: prerequisites, detailed steps, decision points, tools needed, common errors to avoid, and success metrics.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Customer Service</span>
-                        <h3 class="prompt-title">Complaint Resolution Framework</h3>
-                        <p class="prompt-description">Generate empathetic, solution-focused responses to customer complaints.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Customer complaint: [ISSUE]. Craft a response that: acknowledges feelings, takes ownership, explains resolution steps, offers compensation if needed, and prevents future issues. Tone: empathetic but professional.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Finance</span>
-                        <h3 class="prompt-title">Cash Flow Forecaster</h3>
-                        <p class="prompt-description">Predict cash flow trends and identify potential shortfalls.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Using this financial data: [DATA], forecast next 90 days cash flow. Identify: potential shortfalls, seasonal patterns, recommended actions, and optimal payment timing for major expenses.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">HR</span>
-                        <h3 class="prompt-title">Job Description Creator</h3>
-                        <p class="prompt-description">Generate compelling, inclusive job descriptions that attract top talent.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Create a job description for [ROLE] at [COMPANY TYPE]. Include: role summary, key responsibilities, must-have skills, nice-to-have skills, growth opportunities, and inclusive language. Optimize for ATS systems.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Sales</span>
-                        <h3 class="prompt-title">Cold Email Sequence Builder</h3>
-                        <p class="prompt-description">Design multi-touch email campaigns that book meetings.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Create a 5-email sequence for [TARGET PERSONA] selling [SOLUTION]. Email 1: value hook. Email 2: case study. Email 3: social proof. Email 4: objection handling. Email 5: final CTA. Each under 100 words.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Marketing</span>
-                        <h3 class="prompt-title">Social Media Content Calendar</h3>
-                        <p class="prompt-description">Generate 30 days of engaging social content aligned with business goals.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Create 30-day content calendar for [INDUSTRY] business on [PLATFORM]. Mix: educational (40%), entertaining (30%), promotional (20%), engaging questions (10%). Include hashtags and posting times.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Product</span>
-                        <h3 class="prompt-title">Feature Prioritization Matrix</h3>
-                        <p class="prompt-description">Evaluate and rank product features using data-driven frameworks.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Evaluate these features: [LIST]. Score each on: customer impact (1-10), development effort (1-10), revenue potential (1-10), strategic alignment (1-10). Provide prioritized roadmap with rationale.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Analytics</span>
-                        <h3 class="prompt-title">Dashboard Insight Extractor</h3>
-                        <p class="prompt-description">Turn raw data into actionable business insights.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Analyze this data: [METRICS]. Identify: top 3 trends, anomalies requiring attention, correlation patterns, and 3 specific action items to improve KPIs within 30 days.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Strategy</span>
-                        <h3 class="prompt-title">Competitive Analysis Framework</h3>
-                        <p class="prompt-description">Map competitive landscape and identify strategic opportunities.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Analyze competitors: [COMPANIES] in [MARKET]. Compare: pricing, features, positioning, customer reviews, market share. Identify our differentiation opportunities and potential threats.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Operations</span>
-                        <h3 class="prompt-title">Meeting Minutes Summarizer</h3>
-                        <p class="prompt-description">Convert meeting transcripts into structured action items.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Summarize this meeting: [TRANSCRIPT]. Output: key decisions made, action items (owner + deadline), open questions, and follow-up required. Format as bulleted list.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Sales</span>
-                        <h3 class="prompt-title">Objection Handler</h3>
-                        <p class="prompt-description">Generate responses to common sales objections with proof points.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Customer objection: "[OBJECTION]". Provide: empathetic acknowledgment, reframe the concern, supporting evidence/case study, and trial close question. Keep under 75 words.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Marketing</span>
-                        <h3 class="prompt-title">Landing Page Copy Generator</h3>
-                        <p class="prompt-description">Write high-converting landing page copy using proven frameworks.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Create landing page for [OFFER] targeting [AUDIENCE]. Include: attention-grabbing headline, 3 benefit bullets, social proof element, objection handling, and clear CTA. Use PAS framework.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Customer Success</span>
-                        <h3 class="prompt-title">Onboarding Email Sequence</h3>
-                        <p class="prompt-description">Design customer onboarding flows that drive adoption.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Create 7-day onboarding sequence for [PRODUCT]. Day 1: welcome + first action. Day 2: quick win. Day 3: key feature. Day 4: best practice. Day 5: case study. Day 6: community. Day 7: upgrade path.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Finance</span>
-                        <h3 class="prompt-title">Pricing Strategy Analyzer</h3>
-                        <p class="prompt-description">Optimize pricing based on market positioning and value delivery.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Our product: [DESCRIPTION]. Competitors charge: [PRICES]. Our costs: [DATA]. Recommend pricing tiers with: positioning rationale, expected conversion rates, and revenue projections.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Product</span>
-                        <h3 class="prompt-title">User Feedback Synthesizer</h3>
-                        <p class="prompt-description">Extract patterns and priorities from customer feedback.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Analyze customer feedback: [REVIEWS/TICKETS]. Identify: top 5 pain points (with frequency), feature requests (prioritized), sentiment trends, and 3 quick wins we can implement immediately.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">HR</span>
-                        <h3 class="prompt-title">Performance Review Generator</h3>
-                        <p class="prompt-description">Create balanced, constructive performance reviews.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Employee: [NAME], Role: [TITLE]. Achievements: [LIST]. Areas for growth: [LIST]. Write performance review with: accomplishments, developmental feedback, goals for next quarter, and overall rating rationale.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Strategy</span>
-                        <h3 class="prompt-title">SWOT Analysis Generator</h3>
-                        <p class="prompt-description">Conduct strategic analysis to inform business decisions.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Company: [NAME] in [INDUSTRY]. Create SWOT analysis with 5 points each category. Then provide 3 strategic recommendations leveraging strengths/opportunities and addressing weaknesses/threats.
-                        </div>
-                    </div>
-
-                    <div class="prompt-card">
-                        <span class="prompt-category">Operations</span>
-                        <h3 class="prompt-title">Risk Assessment Matrix</h3>
-                        <p class="prompt-description">Identify and prioritize operational risks with mitigation plans.</p>
-                        <div class="prompt-text">
-                            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                            Project: [NAME]. List potential risks with: likelihood (1-5), impact (1-5), risk score, early warning signs, and mitigation strategy. Prioritize top 3 risks requiring immediate action.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Solutions Page -->
-    <div id="solutions" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">Our Solutions</div>
-                    <h2 class="section-title">AI automation tailored to your business needs</h2>
-                    <p class="section-subtitle">From lead generation to customer service, we automate the workflows that matter most.</p>
-                </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Lead Automation</h3>
-                        <p class="feature-description">Capture, score, and nurture leads automatically across all channels. Connect web forms, social media, and advertising platforms to your CRM with intelligent routing and instant follow-up.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Customer Service AI</h3>
-                        <p class="feature-description">Deploy AI chatbots that handle 90%+ of customer inquiries with natural language understanding, ticket routing, and seamless human handoff when needed.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Operations Automation</h3>
-                        <p class="feature-description">Streamline back-office processes including invoicing, scheduling, inventory management, and reporting. Eliminate manual data entry and reduce errors by 95%.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Marketing Automation</h3>
-                        <p class="feature-description">Personalized email campaigns, social media scheduling, content distribution, and performance tracking. Scale your marketing without scaling your team.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Document Processing</h3>
-                        <p class="feature-description">Extract data from invoices, contracts, and forms automatically. Generate reports, contracts, and proposals with intelligent templates and digital signatures.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Team Collaboration</h3>
-                        <p class="feature-description">Automate task assignments, project updates, and team notifications across Slack, Teams, Asana, and more. Keep everyone aligned without constant meetings.</p>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 64px;">
-                    <button class="btn-hero-primary" onclick="navigateTo('audit')">Start Your Automation Journey</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Industries Page -->
-    <div id="industries" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">Industries We Serve</div>
-                    <h2 class="section-title">Specialized automation for your sector</h2>
-                    <p class="section-subtitle">Deep expertise in the workflows, compliance, and challenges unique to your industry.</p>
-                </div>
-
-                <div class="case-study-grid">
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Automotive</div>
-                            <h3 class="case-study-title">Dealerships & Service Centers</h3>
-                            <p class="case-study-company">Accelerate sales and service operations</p>
-                        </div>
-                        <div class="case-study-content">
-                            <p class="case-study-description">Automate lead management from AutoTrader and Motors.co.uk, service booking reminders, MOT notifications, finance application processing, and customer review requests. Integrate with DMS systems and manufacturer portals.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Lead Routing</span>
-                                <span class="solution-tag">Service Scheduling</span>
-                                <span class="solution-tag">Finance Processing</span>
-                                <span class="solution-tag">DMS Integration</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Professional Services</div>
-                            <h3 class="case-study-title">Legal, Accounting & Consulting</h3>
-                            <p class="case-study-company">Bill more hours, reduce admin burden</p>
-                        </div>
-                        <div class="case-study-content">
-                            <p class="case-study-description">Client intake automation, time tracking integration, document generation, compliance checking, billing workflows, and matter management. Maintain confidentiality while increasing efficiency by 70%+.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Client Onboarding</span>
-                                <span class="solution-tag">Document Automation</span>
-                                <span class="solution-tag">Time & Billing</span>
-                                <span class="solution-tag">Compliance</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Retail & E-commerce</div>
-                            <h3 class="case-study-title">Online & Physical Retail</h3>
-                            <p class="case-study-company">Seamless omnichannel operations</p>
-                        </div>
-                        <div class="case-study-content">
-                            <p class="case-study-description">Inventory sync across platforms, dynamic pricing, order fulfillment automation, customer service chatbots, abandoned cart recovery, and personalized marketing campaigns that drive 35%+ revenue growth.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Inventory Management</span>
-                                <span class="solution-tag">Order Processing</span>
-                                <span class="solution-tag">Customer Support</span>
-                                <span class="solution-tag">Marketing Automation</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="case-study-industry">Service Businesses</div>
-                            <h3 class="case-study-title">Field Services & Maintenance</h3>
-                            <p class="case-study-company">Optimize scheduling and dispatch</p>
-                        </div>
-                        <div class="case-study-content">
-                            <p class="case-study-description">Smart scheduling with route optimization, automated booking confirmations, technician dispatch, parts inventory tracking, invoicing, and follow-up review requests. Reduce no-shows by 80%.</p>
-                            <div class="case-study-solutions">
-                                <span class="solution-tag">Smart Scheduling</span>
-                                <span class="solution-tag">Route Planning</span>
-                                <span class="solution-tag">Mobile Workflow</span>
-                                <span class="solution-tag">Auto-Invoicing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 64px;">
-                    <button class="btn-hero-primary" onclick="navigateTo('audit')">Discuss Your Industry Needs</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- About Page -->
-    <div id="about" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">About IGNYTE</div>
-                    <h2 class="section-title">We're on a mission to democratize enterprise automation</h2>
-                    <p class="section-subtitle">Founded by automation experts who've scaled businesses from startup to exit, we bring Fortune 500 capabilities to ambitious SMBs.</p>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Our Philosophy</h3>
-                        <p class="feature-description">Every business deserves access to cutting-edge automation, not just enterprises with massive IT budgets. We believe in transparent pricing, rapid deployment, and measurable ROI.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Expert Team</h3>
-                        <p class="feature-description">Our automation architects have implemented solutions for companies from 5 to 5,000 employees. We combine technical expertise with deep business acumen.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">n8n Specialists</h3>
-                        <p class="feature-description">As certified n8n experts, we leverage the most powerful open-source automation platform to build solutions that scale with your business without vendor lock-in.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Proven Results</h3>
-                        <p class="feature-description">50+ businesses transformed, 6,700+ hours saved monthly, and an average 10X ROI within 6 months. Our track record speaks for itself.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Partnership Approach</h3>
-                        <p class="feature-description">We're not just vendors—we're growth partners. Ongoing optimization, training, and support ensure your automation evolves with your business.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--primary-purple)">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">UK-Based</h3>
-                        <p class="feature-description">Local team understanding UK business needs, GDPR compliance, and industry regulations. Available during your business hours for support and strategy.</p>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 64px;">
-                    <button class="btn-hero-primary" onclick="navigateTo('audit')">Work With Us</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Blog Page -->
-    <div id="blog" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-eyebrow">Insights & Resources</div>
-                    <h2 class="section-title">The latest in AI automation strategy</h2>
-                    <p class="section-subtitle">Expert insights, case studies, and practical guides to help you leverage automation for competitive advantage.</p>
-                </div>
-
-                <div class="blog-grid">
-                    <div class="blog-card">
-                        <div class="blog-image">📊</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Strategy</span>
-                                <span>•</span>
-                                <span>8 min read</span>
-                            </div>
-                            <h3 class="blog-title">How AI Automation Delivers 10X ROI in 6 Months</h3>
-                            <p class="blog-excerpt">The financial case for automation is stronger than ever. Learn the framework we use to identify high-impact automation opportunities that pay for themselves in months, not years.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">🚀</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Implementation</span>
-                                <span>•</span>
-                                <span>12 min read</span>
-                            </div>
-                            <h3 class="blog-title">The SMB Guide to Choosing Automation Tools</h3>
-                            <p class="blog-excerpt">Not all automation platforms are created equal. Discover why n8n offers the perfect balance of power, flexibility, and affordability for growing businesses.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">💡</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Best Practices</span>
-                                <span>•</span>
-                                <span>10 min read</span>
-                            </div>
-                            <h3 class="blog-title">5 Workflows Every Business Should Automate First</h3>
-                            <p class="blog-excerpt">Start your automation journey with these high-impact, low-complexity workflows that deliver immediate value while building momentum for larger initiatives.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">🎯</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Case Study</span>
-                                <span>•</span>
-                                <span>6 min read</span>
-                            </div>
-                            <h3 class="blog-title">Automotive Dealership Increases Leads 312% with AI</h3>
-                            <p class="blog-excerpt">Premier Motors transformed their sales pipeline with automated lead capture and intelligent qualification. See the complete breakdown of their journey from manual to automated.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">🔧</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Technical</span>
-                                <span>•</span>
-                                <span>15 min read</span>
-                            </div>
-                            <h3 class="blog-title">Building Your First n8n Workflow: Complete Tutorial</h3>
-                            <p class="blog-excerpt">Step-by-step guide to creating powerful automations with n8n. From basic triggers to complex multi-step workflows with AI integration and error handling.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-image">📈</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Trends</span>
-                                <span>•</span>
-                                <span>9 min read</span>
-                            </div>
-                            <h3 class="blog-title">2026 Automation Trends UK Businesses Can't Ignore</h3>
-                            <p class="blog-excerpt">AI agents, hyperautomation, and no-code platforms are reshaping how businesses operate. Stay ahead of the curve with insights on what's coming next.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Audit Form Page -->
-    <div id="audit" class="page">
-        <div class="form-page">
-            <div class="container">
-                <div class="form-container">
-                    <div class="form-header">
-                        <h2>Get Your Free Automation Audit</h2>
-                        <p>Discover your biggest automation opportunities in a 30-minute consultation. No obligations, just actionable insights.</p>
-                    </div>
-                    <form id="auditForm">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Work Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company Name *</label>
-                            <input type="text" id="company" name="company" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="industry">Industry *</label>
-                            <select id="industry" name="industry" required>
-                                <option value="">Select your industry</option>
-                                <option value="automotive">Automotive</option>
-                                <option value="professional">Professional Services</option>
-                                <option value="retail">Retail & E-commerce</option>
-                                <option value="service">Service Business</option>
-                                <option value="manufacturing">Manufacturing</option>
-                                <option value="healthcare">Healthcare</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="teamSize">Team Size *</label>
-                            <select id="teamSize" name="teamSize" required>
-                                <option value="">Select team size</option>
-                                <option value="1-10">1-10 employees</option>
-                                <option value="11-50">11-50 employees</option>
-                                <option value="51-200">51-200 employees</option>
-                                <option value="201+">201+ employees</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="challenge">What's your biggest operational challenge? *</label>
-                            <textarea id="challenge" name="challenge" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Get My Free Audit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Thank You Page -->
-    <div id="thankyou" class="page">
-        <div class="thank-you-page">
-            <div class="container">
-                <div class="thank-you-content">
-                    <div class="thank-you-icon">✓</div>
-                    <h2>Thank You!</h2>
-                    <p>We've received your request for a free automation audit. Our team will review your information and reach out within 24 hours to schedule your consultation.</p>
-                    <p>In the meantime, check out our free prompts to start experimenting with AI in your business.</p>
-                    <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px;">
-                        <button class="btn-hero-primary" onclick="navigateTo('prompts')">Explore Free Prompts</button>
-                        <button class="btn-hero-secondary" onclick="navigateTo('home')">Back to Home</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-brand">IGNYTE</div>
-                    <p class="footer-description">The #1 AI automation agency helping UK businesses eliminate busywork and accelerate growth with intelligent n8n workflows.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a onclick="navigateTo('solutions')">Lead Automation</a></li>
-                        <li><a onclick="navigateTo('solutions')">Customer Service AI</a></li>
-                        <li><a onclick="navigateTo('solutions')">Operations</a></li>
-                        <li><a onclick="navigateTo('solutions')">Marketing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Industries</h4>
-                    <ul>
-                        <li><a onclick="navigateTo('industries')">Automotive</a></li>
-                        <li><a onclick="navigateTo('industries')">Professional Services</a></li>
-                        <li><a onclick="navigateTo('industries')">Retail</a></li>
-                        <li><a onclick="navigateTo('industries')">Service Business</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a onclick="navigateTo('prompts')">Free Prompts</a></li>
-                        <li><a onclick="navigateTo('blog')">Blog</a></li>
-                        <li><a onclick="navigateTo('home')">Case Studies</a></li>
-                        <li><a onclick="navigateTo('audit')">Free Audit</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a onclick="navigateTo('about')">About</a></li>
-                        <li><a onclick="navigateTo('audit')">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 IGNYTE. All rights reserved. Built with n8n automation excellence.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Navigation System
-        function navigateTo(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update nav active states
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Form Submission
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            navigateTo('thankyou');
-        });
-
-        // Copy Prompt Function
-        function copyPrompt(button) {
-            const promptText = button.parentElement.textContent.replace('Copy', '').trim();
-            navigator.clipboard.writeText(promptText).then(() => {
-                button.textContent = 'Copied!';
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                }, 2000);
-            });
-        }
-    </script>
-</body>
-</html>
-            
